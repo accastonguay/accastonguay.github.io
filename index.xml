@@ -22,7 +22,7 @@
     <item>
       <title>Towards water sensitive cities in Asia: an interdisciplinary journey</title>
       <link>https://accastonguay.github.io/publication/wsc-asia/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +1000</pubDate>
+      <pubDate>Mon, 01 May 2017 00:00:00 +1000</pubDate>
       
       <guid>https://accastonguay.github.io/publication/wsc-asia/</guid>
       <description></description>
@@ -109,7 +109,7 @@ Service on Agricultural Research for Development
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;b&gt; Peer-reviewed article &lt;/b&gt;&lt;/center&gt;
 &lt;p&gt;&lt;/p&gt;
-2017
+2018
 :    **Castonguay, A.C.**, Urich, C., Iftekhar, M.S., Deletic, A. 2018. Modelling urban water management transitions: A case of rainwater harvesting. Environmental Modelling &amp; Software 105, [DOI: 10.1016/j.envsoft.2018.05.001](https://www.sciencedirect.com/science/article/pii/S136481521630994X)
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -209,18 +209,26 @@ Nankai University, Tianjin, China&lt;br /&gt;
     </item>
     
     <item>
-      <title>Modelling of urban stormwater system</title>
+      <title>Modelling the uptake of stormwater treatment systems</title>
       <link>https://accastonguay.github.io/project/abm-stormwater/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +1000</pubDate>
       
       <guid>https://accastonguay.github.io/project/abm-stormwater/</guid>
-      <description>&lt;p&gt;Cities are increasingly exposed to extreme climate events such as floods and droughts. Land use change is also expected to reduce the availability of green spaces and intensify extreme heat events. Given these pressures on the quality of life of urban dwellers, there is a great need to improve the integrated management of water to enable sustainable development of rapidly growing cities and improve human well-being.&lt;/p&gt;
+      <description>
+
+&lt;p&gt;Cities are increasingly exposed to extreme climate events such as floods and droughts. Land use change is also expected to reduce the availability of green spaces and intensify extreme heat events. Given these pressures on the quality of life of urban dwellers, there is a great need to improve the integrated management of water to enable sustainable development of rapidly growing cities and improve human well-being.&lt;/p&gt;
 
 &lt;p&gt;A promising way to make urban communities more liveable is to invest in green water technologies, that is, decentralised and low-energy water supply, wastewater and stormwater solutions, to foster the transition to more sustainable and resilient cities. However, the adoption of multifunctional water technologies is a complex issue that requires cross-disciplinary approaches, demanding innovative thinking and practice. Despite the increasing body of literature on the services and benefits of decentralised water technologies, several barriers and uncertainties (technical, economic, social) to their adoption remain.&lt;/p&gt;
 
 &lt;p&gt;The goal of this project is to develop an agent-based model to be used as a tool to explore different strategies and policy mechanisms to enable the uptake of nature-based solution for stormwater treatment and harvesting, such as rainwater tanks, raingardens and constructed wetlands.&lt;/p&gt;
 
 &lt;p&gt;More specifically, the model should be able to simulate the behavior and decision-making of the most important actors in cities (water utility, local councils, housegholds, etc.). It should also be able to replicate the interactions to reproduce the influence that actors can have on other actors&amp;rsquo; decision-making. Finally, the the model should allow for dynamic simulations to test and explore the development of the urban stormater management system over time and under scenarios of population growth and climate change.&lt;/p&gt;
+
+&lt;h1 id=&#34;rainwater-tank-npv-calculator&#34;&gt;Rainwater tank NPV calculator&lt;/h1&gt;
+
+&lt;p&gt;One of the outputs of the model is the assessment of the value of rainwater tanks, based on multiple costs and water saving benefit. Below is a R Shiny app to caluculate the Net Present Value of three volumes of tanks (2, 5 and 10 kl) and two usages (outdoor use only and combined indoor-outdoor use).&lt;/p&gt;
+
+&lt;iframe style=&#34;overflow:hidden&#34; scrolling=&#34;no&#34; width=&#34;1000&#34; height=&#34;1000&#34; frameBorder=&#34;0&#34; src=&#34;https://accastonguay.shinyapps.io/rwht_app/&#34;&gt; &lt;/iframe&gt;
 </description>
     </item>
     
