@@ -226,7 +226,7 @@ Nankai University, Tianjin, China&lt;br /&gt;
 
 &lt;h1 id=&#34;rainwater-tank-npv-calculator&#34;&gt;Rainwater tank NPV calculator&lt;/h1&gt;
 
-&lt;p&gt;One of the outputs of the model is the assessment of the value of rainwater tanks, based on multiple costs and water saving benefit. Below is a R Shiny app to caluculate the Net Present Value of three volumes of tanks (2, 5 and 10 kl) and two usages (outdoor use only and combined indoor-outdoor use).&lt;/p&gt;
+&lt;p&gt;One of the outputs of the model is the assessment of the value of rainwater tanks, based on multiple costs and water saving benefit. Below is a R Shiny app to caluculate the Net Present Value of three volumes of tanks (2, 5 and 10 kl) and two usages (outdoor use only and combined indoor-outdoor use). You can enter your household characteristics (e.g., household size, roof area, garden area, etc.) and rainwater tank-related costs and other data (e.g., installation costs, maintenance costs, expected lifespan, etc.) to see how many years are needed for the investment to become profitable.&lt;/p&gt;
 
 &lt;iframe style=&#34;overflow:hidden&#34; scrolling=&#34;no&#34; width=&#34;1000&#34; height=&#34;1000&#34; frameBorder=&#34;0&#34; src=&#34;https://accastonguay.shinyapps.io/rwht_app/&#34;&gt; &lt;/iframe&gt;
 </description>
