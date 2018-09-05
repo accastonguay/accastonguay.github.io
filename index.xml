@@ -19,11 +19,11 @@
       <description>&lt;p&gt;In a few weeks, I will be moving to Brisbane for work. One thing of Melbourne that I enjoyed was its multicultural feel and the diversity of restaurants that come with it.
 I was therefore curious to find out whether Brisbane is as multicultural as Melbourne and decided to map the country of origin of residents in Brisbane by country of origin.
 This is obviously not new; there are some nice maps doing the same, e.g., &lt;a href=&#34;http://www.sbs.com.au/news/map/where-australias-immigrants-were-born-brisbane&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
-However, itt always feels better to do it by ourself.&lt;/p&gt;
+However, it always feels much better to do it by ourself.&lt;/p&gt;
 
 &lt;p&gt;The data, at the scale of the Statistical Sreas level 2 (SA2), comes from the latest census (2016) completed by the Australian bureau of Statistics&lt;/p&gt;
 
-&lt;iframe style=&#34;overflow:hidden&#34; scrolling=&#34;yes&#34; width=&#34;100%&#34; height=600&#34; frameBorder=&#34;0&#34; src=&#34;https://accastonguay.shinyapps.io/brisbane_ethinicity/&#34;&gt; &lt;/iframe&gt;
+&lt;iframe style=&#34;overflow:hidden&#34; scrolling=&#34;yes&#34; width=&#34;100%&#34; height=600&#34; frameBorder=&#34;0&#34; src=&#34;https://accastonguay.shinyapps.io/brisbane_ethinicity/&#34; allowfullscreen&gt; &lt;/iframe&gt;
 </description>
     </item>
     
