@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://accastonguay.github.io/post/origin-mapping/</loc>
+      <lastmod>2018-05-09T00:00:00+10:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://accastonguay.github.io/publication/nbs/</loc>
       <lastmod>2018-05-01T00:00:00+10:00</lastmod>
     </url>
@@ -50,15 +59,6 @@
     
     <url>
     
-      <loc>https://accastonguay.github.io/talk/example-talk/</loc>
-      <lastmod>2017-01-01T00:00:00+11:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>https://accastonguay.github.io/post/</loc>
       <lastmod>2017-01-01T00:00:00+11:00</lastmod>
     </url>
@@ -78,15 +78,6 @@
     <url>
     
       <loc>https://accastonguay.github.io/cv/</loc>
-      <lastmod>2017-01-01T00:00:00+11:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://accastonguay.github.io/talk/</loc>
       <lastmod>2017-01-01T00:00:00+11:00</lastmod>
     </url>
     
@@ -115,24 +106,6 @@
     
       <loc>https://accastonguay.github.io/project/resilience/</loc>
       <lastmod>2016-04-27T00:00:00+10:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://accastonguay.github.io/post/getting-started/</loc>
-      <lastmod>2018-01-13T00:00:00+11:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://accastonguay.github.io/post/2015-07-23-r-rmarkdown/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     </url>
     
   
@@ -185,8 +158,8 @@
     
     <url>
     
-      <loc>https://accastonguay.github.io/tags/nature-based-solutions/</loc>
-      <lastmod>2016-04-27T00:00:00+10:00</lastmod>
+      <loc>https://accastonguay.github.io/tags/leaflet/</loc>
+      <lastmod>2018-05-09T00:00:00+10:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -195,8 +168,18 @@
     
     <url>
     
-      <loc>https://accastonguay.github.io/tags/plot/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+      <loc>https://accastonguay.github.io/tags/mapping/</loc>
+      <lastmod>2018-05-09T00:00:00+10:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://accastonguay.github.io/tags/nature-based-solutions/</loc>
+      <lastmod>2016-04-27T00:00:00+10:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -228,28 +211,8 @@
     
     <url>
     
-      <loc>https://accastonguay.github.io/categories/r/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://accastonguay.github.io/tags/r-markdown/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://accastonguay.github.io/tags/regression/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+      <loc>https://accastonguay.github.io/tags/r/</loc>
+      <lastmod>2018-05-09T00:00:00+10:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -270,6 +233,16 @@
     
       <loc>https://accastonguay.github.io/tags/rice-terraces/</loc>
       <lastmod>2016-04-27T00:00:00+10:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://accastonguay.github.io/tags/shiny/</loc>
+      <lastmod>2018-05-09T00:00:00+10:00</lastmod>
       <priority>0</priority>
     </url>
     

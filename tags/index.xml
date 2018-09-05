@@ -31,6 +31,24 @@
     </item>
     
     <item>
+      <title>Leaflet</title>
+      <link>https://accastonguay.github.io/tags/leaflet/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>
+      
+      <guid>https://accastonguay.github.io/tags/leaflet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapping</title>
+      <link>https://accastonguay.github.io/tags/mapping/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>
+      
+      <guid>https://accastonguay.github.io/tags/mapping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nature-based solutions</title>
       <link>https://accastonguay.github.io/tags/nature-based-solutions/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +1000</pubDate>
@@ -40,29 +58,11 @@
     </item>
     
     <item>
-      <title>Plot</title>
-      <link>https://accastonguay.github.io/tags/plot/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>R</title>
+      <link>https://accastonguay.github.io/tags/r/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>
       
-      <guid>https://accastonguay.github.io/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>https://accastonguay.github.io/tags/r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://accastonguay.github.io/tags/r-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regression</title>
-      <link>https://accastonguay.github.io/tags/regression/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://accastonguay.github.io/tags/regression/</guid>
+      <guid>https://accastonguay.github.io/tags/r/</guid>
       <description></description>
     </item>
     
@@ -81,6 +81,15 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +1000</pubDate>
       
       <guid>https://accastonguay.github.io/tags/rice-terraces/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny</title>
+      <link>https://accastonguay.github.io/tags/shiny/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>
+      
+      <guid>https://accastonguay.github.io/tags/shiny/</guid>
       <description></description>
     </item>
     

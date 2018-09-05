@@ -59,15 +59,6 @@
     </item>
     
     <item>
-      <title>Recent Posts</title>
-      <link>https://accastonguay.github.io/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +1000</pubDate>
-      
-      <guid>https://accastonguay.github.io/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Projects</title>
       <link>https://accastonguay.github.io/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +1000</pubDate>
@@ -106,6 +97,15 @@ I am a teaching instructor for the following courses at University X:
       <pubDate>Wed, 20 Sep 2017 00:00:00 +1000</pubDate>
       
       <guid>https://accastonguay.github.io/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://accastonguay.github.io/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +1000</pubDate>
+      
+      <guid>https://accastonguay.github.io/home/posts/</guid>
       <description></description>
     </item>
     
