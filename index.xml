@@ -11,6 +11,117 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Mapping flights with Leaflet and Shiny</title>
+      <link>https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/</guid>
+      <description>&lt;p&gt;Related to the last post, I was curious to see where one can fly from Brisbane. After a bit of research, I saw that data on &lt;a href=&#34;https://openflights.org/data.html&#34;&gt;airports, airlines and routes&lt;/a&gt; are available online. I also saw online some attempts&lt;/p&gt;
+&lt;p&gt;Here is a map that uses shiny and leaflet in R to map all destinations from most airports in the world. The code, which is partly based on a &lt;a href=&#34;http://web.stanford.edu/~cengel/cgi-bin/anthrospace/great-circles-on-a-recentered-worldmap-in-ggplot&#34;&gt;previous map made with ggplot&lt;/a&gt;, can be found below.&lt;/p&gt;
+&lt;iframe style=&#34;overflow:hidden&#34; scrolling=&#34;yes&#34; width=&#34;100%&#34; height=&#34;600&amp;quot;&#34; frameBorder=&#34;0&#34; src=&#34;https://accastonguay.shinyapps.io/flights_app/&#34;&gt;
+&lt;/iframe&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;shiny&amp;quot;)
+library(&amp;quot;leaflet&amp;quot;)
+library(&amp;quot;dplyr&amp;quot;)
+library(&amp;quot;geosphere&amp;quot;)
+library(&amp;quot;plyr&amp;quot;) 
+
+airports &amp;lt;- read.table(&amp;quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat&amp;quot;, 
+                       header=F, sep=&amp;quot;,&amp;quot;)
+
+flights &amp;lt;-  read.table(&amp;quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat&amp;quot;, 
+                       header=F,  sep=&amp;quot;,&amp;quot;)
+
+airlines &amp;lt;-  read.table(&amp;quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat&amp;quot;, 
+                        header=F, sep=&amp;quot;,&amp;quot;) %&amp;gt;% dplyr::select(V2, V4)
+
+colnames(flights) &amp;lt;- c(&amp;quot;Airline_code&amp;quot;, &amp;quot;c2&amp;quot;, &amp;quot;origin&amp;quot;, &amp;quot;c4&amp;quot;, &amp;quot;destination&amp;quot;, &amp;quot;c6&amp;quot;, &amp;quot;c7&amp;quot;, &amp;quot;c8&amp;quot;,&amp;quot;c9&amp;quot;)
+all_data0 &amp;lt;- dplyr::select(flights, Airline_code, origin, destination) %&amp;gt;%
+  dplyr::left_join(airports[, c(&amp;quot;V3&amp;quot;,&amp;quot;V4&amp;quot;, &amp;quot;V5&amp;quot;, &amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;)],by = c(&amp;quot;origin&amp;quot; = &amp;quot;V5&amp;quot;)) %&amp;gt;%
+  dplyr::left_join(airports[, c(&amp;quot;V3&amp;quot;,&amp;quot;V4&amp;quot;, &amp;quot;V5&amp;quot;, &amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;)],by = c(&amp;quot;destination&amp;quot; = &amp;quot;V5&amp;quot;))%&amp;gt;%
+  dplyr::left_join(airlines, by = c(&amp;quot;Airline_code&amp;quot;= &amp;quot;V4&amp;quot;))%&amp;gt;%
+  mutate(city = paste(V3.x, &amp;quot;, &amp;quot;,     V4.x, sep = &amp;quot;&amp;quot;))
+
+
+colnames(all_data0) &amp;lt;- c(&amp;quot;Airline_code&amp;quot;, &amp;quot;origin&amp;quot;, &amp;quot;destination&amp;quot;, &amp;quot;city1&amp;quot;, &amp;quot;country&amp;quot;,  &amp;quot;lat_ori&amp;quot;, &amp;quot;lng_ori&amp;quot;, &amp;quot;city_dest&amp;quot;, &amp;quot;country_dest&amp;quot;, &amp;quot;lat_dest&amp;quot;, &amp;quot;lng_dest&amp;quot;, &amp;quot;airline&amp;quot;, &amp;quot;city&amp;quot;)
+
+all_data &amp;lt;- na.omit(all_data0)
+
+all_data$city &amp;lt;- dplyr::recode(all_data$city,
+                        &amp;quot;Ã–stersund, Sweden&amp;quot; = &amp;quot;Oestersund, Sweden&amp;quot;,
+                        &amp;quot;Ã„ngelholm, Sweden&amp;quot; = &amp;quot;Aengelholm, Sweden&amp;quot;,
+                        &amp;quot;Ã‡orlu, Turkey&amp;quot; = &amp;quot;Corlu, Turkey&amp;quot;)
+                        
+bootstrapPage(
+  tags$style(type = &amp;quot;text/css&amp;quot;, &amp;quot;html, body {width:100%;height:100%}&amp;quot;),
+  leafletOutput(&amp;quot;map&amp;quot;, width = &amp;quot;100%&amp;quot;, height = &amp;quot;100%&amp;quot;),
+  absolutePanel(top = 60, right = 10,
+                selectInput(&amp;quot;origin&amp;quot;,&amp;quot;Origin&amp;quot;,
+                            selected = &amp;quot;Brisbane, Australia&amp;quot;,
+                            levels(factor(all_data$city))),
+                # uiOutput(&amp;quot;airline&amp;quot;),
+                style = &amp;quot;opacity: 0.65; z-index: 1000;&amp;quot;)
+) 
+
+function(input,output, session){
+  
+  Dataframe2 &amp;lt;- reactive({
+    data &amp;lt;- all_data[all_data$city %in% input$origin,]})
+  
+  output$map &amp;lt;- renderLeaflet({
+    data &amp;lt;- Dataframe2()
+    
+    df2&amp;lt;-gcIntermediate(as.matrix(data[,c(&amp;quot;lng_ori&amp;quot;, &amp;quot;lat_ori&amp;quot;)]),
+                        as.matrix(data[,c(&amp;quot;lng_dest&amp;quot;, &amp;quot;lat_dest&amp;quot;)]),
+                        n=100,
+                        addStartEnd=TRUE,
+                        sp=TRUE,
+                        breakAtDateLine=FALSE)
+    df2 &amp;lt;- as(df2, &amp;quot;SpatialLinesDataFrame&amp;quot;)
+    df2.ff &amp;lt;- fortify(df2)
+    
+    data$id &amp;lt;-as.character(c(1:nrow(data))) 
+    gcircles &amp;lt;- merge(df2.ff, data, all.x=T, by=&amp;quot;id&amp;quot;)
+    
+    if (data$lng_ori[1] &amp;gt; 0){
+      center &amp;lt;- data$lng_ori[1]
+    }
+    else{
+      center &amp;lt;- data$lng_ori[1] + 360
+    }
+    
+    gcircles$long.recenter &amp;lt;-  ifelse(gcircles$long  &amp;lt; center - 180 , gcircles$long + 360, gcircles$long)
+    data$long.ori.recenter &amp;lt;-  ifelse(data$lng_ori  &amp;lt; center - 180 , data$lng_ori + 360, data$lng_ori)
+    data$long.dest.recenter &amp;lt;-  ifelse(data$lng_dest  &amp;lt; center - 180 , data$lng_dest + 360, data$lng_dest)
+    
+    test_line &amp;lt;- sf::st_as_sf(gcircles, coords = c(&amp;quot;long.recenter&amp;quot;, &amp;quot;lat&amp;quot;)) %&amp;gt;%
+      dplyr::group_by(id, piece) %&amp;gt;%
+      dplyr::summarize(do_union=FALSE) %&amp;gt;%
+      sf::st_cast(&amp;quot;LINESTRING&amp;quot;) %&amp;gt;%
+      dplyr::ungroup()
+    
+    test_line2 &amp;lt;- dplyr::left_join(test_line, data)
+    
+    labels &amp;lt;- sprintf(
+      &amp;quot;&amp;lt;strong&amp;gt;%s, &amp;lt;/strong&amp;gt; %s&amp;quot;,
+      data$city_dest, data$country_dest) %&amp;gt;% lapply(htmltools::HTML)
+  
+    m &amp;lt;- leaflet(data =  test_line2) %&amp;gt;%
+      addTiles() %&amp;gt;%
+      addProviderTiles(providers$CartoDB.Positron, group = &amp;quot;Carto DB Positron&amp;quot;) %&amp;gt;%
+      addProviderTiles(providers$CartoDB.DarkMatterNoLabels, group = &amp;quot;Carto DB dark&amp;quot;)%&amp;gt;%
+      addPolylines(weight = 1, opacity = 0.5, color = &amp;quot;#820a0a&amp;quot;, label = ~airline) %&amp;gt;%
+      addCircleMarkers(data = data, lng = ~long.ori.recenter, lat = ~lat_ori, radius =0.5, fillOpacity = 0.1,
+                       weight = 2,opacity = 0.1, color = &amp;quot;red&amp;quot;) %&amp;gt;%
+      addCircleMarkers(data = data, lng = ~long.dest.recenter, lat = ~lat_dest, radius =1, label = labels) %&amp;gt;%
+      addLayersControl(baseGroups = c(&amp;quot;Carto DB Positron&amp;quot;,&amp;quot;Carto DB dark&amp;quot;))
+    m
+  })
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Mapping country of origin with Leaflet and Shiny</title>
       <link>https://accastonguay.github.io/post/origin-mapping/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>

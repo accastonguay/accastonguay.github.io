@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Mapping flights with Leaflet and Shiny</title>
+      <link>https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/</guid>
+      <description>Related to the last post, I was curious to see where one can fly from Brisbane. After a bit of research, I saw that data on airports, airlines and routes are available online. I also saw online some attempts
+Here is a map that uses shiny and leaflet in R to map all destinations from most airports in the world. The code, which is partly based on a previous map made with ggplot, can be found below.</description>
+    </item>
+    
+    <item>
       <title>Mapping country of origin with Leaflet and Shiny</title>
       <link>https://accastonguay.github.io/post/origin-mapping/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +1000</pubDate>

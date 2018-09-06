@@ -17,10 +17,11 @@
       
     
   
-  <meta name="description" content="In a few weeks, I will be moving to Brisbane for work. One thing of Melbourne that I enjoyed was its multicultural feel and the diversity of restaurants that come with it. I was therefore curious to find out whether Brisbane is as multicultural as Melbourne and decided to map the country of origin of residents in Brisbane by country of origin. This is obviously not new; there are some nice maps doing the same, e.">
+  <meta name="description" content="Related to the last post, I was curious to see where one can fly from Brisbane. After a bit of research, I saw that data on airports, airlines and routes are available online. I also saw online some attempts
+Here is a map that uses shiny and leaflet in R to map all destinations from most airports in the world. The code, which is partly based on a previous map made with ggplot, can be found below.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://accastonguay.github.io/post/getting-started/">
+  <link rel="alternate" hreflang="en-us" href="https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/">
 
   
 
@@ -84,24 +85,25 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://accastonguay.github.io/post/getting-started/">
+  <link rel="canonical" href="https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/">
 
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Adam Castonguay">
-  <meta property="og:url" content="https://accastonguay.github.io/post/getting-started/">
-  <meta property="og:title" content="Interactive mapping of country of origin | Adam Castonguay">
-  <meta property="og:description" content="In a few weeks, I will be moving to Brisbane for work. One thing of Melbourne that I enjoyed was its multicultural feel and the diversity of restaurants that come with it. I was therefore curious to find out whether Brisbane is as multicultural as Melbourne and decided to map the country of origin of residents in Brisbane by country of origin. This is obviously not new; there are some nice maps doing the same, e."><meta property="og:image" content="https://accastonguay.github.io/img/headers/getting-started.png">
+  <meta property="og:url" content="https://accastonguay.github.io/post/mapping-flights-with-leaflet-and-shiny/">
+  <meta property="og:title" content="Mapping flights with Leaflet and Shiny | Adam Castonguay">
+  <meta property="og:description" content="Related to the last post, I was curious to see where one can fly from Brisbane. After a bit of research, I saw that data on airports, airlines and routes are available online. I also saw online some attempts
+Here is a map that uses shiny and leaflet in R to map all destinations from most airports in the world. The code, which is partly based on a previous map made with ggplot, can be found below.">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-05-09T00:00:00&#43;10:00">
+  <meta property="article:published_time" content="2018-09-06T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2018-05-09T00:00:00&#43;10:00">
-  
-
+  <meta property="article:modified_time" content="2018-09-06T00:00:00&#43;00:00">
   
 
-  <title>Interactive mapping of country of origin | Adam Castonguay</title>
+  
+
+  <title>Mapping flights with Leaflet and Shiny | Adam Castonguay</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
@@ -255,19 +257,10 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
 
   
-<div class="article-header">
-  
-  
-    <img src="/img/headers/getting-started.png" class="article-banner" itemprop="image">
-  
-
-  <span class="article-header-caption">Image credit: <a href="https://github.com/gcushen/hugo-academic/" target="_blank"><strong>Academic</strong></a></span>
-</div>
-
 
 
   <div class="article-container">
-    <h1 itemprop="name">Interactive mapping of country of origin</h1>
+    <h1 itemprop="name">Mapping flights with Leaflet and Shiny</h1>
 
     
 
@@ -275,8 +268,8 @@
 
   <span class="article-date">
     
-    <time datetime="2018-05-09 00:00:00 &#43;1000 AEST" itemprop="datePublished dateModified">
-      May 9, 2018
+    <time datetime="2018-09-06 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Sep 6, 2018
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -286,13 +279,16 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    2 min read
   </span>
   
 
   
   
 
+  
+  
+  
   
 
   
@@ -301,35 +297,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Interactive%20mapping%20of%20country%20of%20origin&amp;url=https%3a%2f%2faccastonguay.github.io%2fpost%2fgetting-started%2f"
+         href="https://twitter.com/intent/tweet?text=Mapping%20flights%20with%20Leaflet%20and%20Shiny&amp;url=https%3a%2f%2faccastonguay.github.io%2fpost%2fmapping-flights-with-leaflet-and-shiny%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2faccastonguay.github.io%2fpost%2fgetting-started%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2faccastonguay.github.io%2fpost%2fmapping-flights-with-leaflet-and-shiny%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2faccastonguay.github.io%2fpost%2fgetting-started%2f&amp;title=Interactive%20mapping%20of%20country%20of%20origin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2faccastonguay.github.io%2fpost%2fmapping-flights-with-leaflet-and-shiny%2f&amp;title=Mapping%20flights%20with%20Leaflet%20and%20Shiny"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2faccastonguay.github.io%2fpost%2fgetting-started%2f&amp;title=Interactive%20mapping%20of%20country%20of%20origin"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2faccastonguay.github.io%2fpost%2fmapping-flights-with-leaflet-and-shiny%2f&amp;title=Mapping%20flights%20with%20Leaflet%20and%20Shiny"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Interactive%20mapping%20of%20country%20of%20origin&amp;body=https%3a%2f%2faccastonguay.github.io%2fpost%2fgetting-started%2f">
+         href="mailto:?subject=Mapping%20flights%20with%20Leaflet%20and%20Shiny&amp;body=https%3a%2f%2faccastonguay.github.io%2fpost%2fmapping-flights-with-leaflet-and-shiny%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -343,44 +339,118 @@
 
 
     <div class="article-style" itemprop="articleBody">
-      <p>In a few weeks, I will be moving to Brisbane for work. One thing of Melbourne that I enjoyed was its multicultural feel and the diversity of restaurants that come with it.
-I was therefore curious to find out whether Brisbane is as multicultural as Melbourne and decided to map the country of origin of residents in Brisbane by country of origin.
-This is obviously not new; there are some nice maps doing the same, e.g., <a href="http://www.sbs.com.au/news/map/where-australias-immigrants-were-born-brisbane" target="_blank">here</a>.
-However, itt always feels better to do it by ourself.</p>
+      <p>Related to the last post, I was curious to see where one can fly from Brisbane. After a bit of research, I saw that data on <a href="https://openflights.org/data.html">airports, airlines and routes</a> are available online. I also saw online some attempts</p>
+<p>Here is a map that uses shiny and leaflet in R to map all destinations from most airports in the world. The code, which is partly based on a <a href="http://web.stanford.edu/~cengel/cgi-bin/anthrospace/great-circles-on-a-recentered-worldmap-in-ggplot">previous map made with ggplot</a>, can be found below.</p>
+<iframe style="overflow:hidden" scrolling="yes" width="100%" height="600&quot;" frameBorder="0" src="https://accastonguay.shinyapps.io/flights_app/">
+</iframe>
+<pre class="r"><code>library(&quot;shiny&quot;)
+library(&quot;leaflet&quot;)
+library(&quot;dplyr&quot;)
+library(&quot;geosphere&quot;)
+library(&quot;plyr&quot;) 
 
-<p>The data, at the scale of the Statistical Sreas level 2 (SA2), comes from the latest census (2016) completed by the Australian bureau of Statistics</p>
+airports &lt;- read.table(&quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat&quot;, 
+                       header=F, sep=&quot;,&quot;)
+
+flights &lt;-  read.table(&quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat&quot;, 
+                       header=F,  sep=&quot;,&quot;)
+
+airlines &lt;-  read.table(&quot;https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat&quot;, 
+                        header=F, sep=&quot;,&quot;) %&gt;% dplyr::select(V2, V4)
+
+colnames(flights) &lt;- c(&quot;Airline_code&quot;, &quot;c2&quot;, &quot;origin&quot;, &quot;c4&quot;, &quot;destination&quot;, &quot;c6&quot;, &quot;c7&quot;, &quot;c8&quot;,&quot;c9&quot;)
+all_data0 &lt;- dplyr::select(flights, Airline_code, origin, destination) %&gt;%
+  dplyr::left_join(airports[, c(&quot;V3&quot;,&quot;V4&quot;, &quot;V5&quot;, &quot;V7&quot;,&quot;V8&quot;)],by = c(&quot;origin&quot; = &quot;V5&quot;)) %&gt;%
+  dplyr::left_join(airports[, c(&quot;V3&quot;,&quot;V4&quot;, &quot;V5&quot;, &quot;V7&quot;,&quot;V8&quot;)],by = c(&quot;destination&quot; = &quot;V5&quot;))%&gt;%
+  dplyr::left_join(airlines, by = c(&quot;Airline_code&quot;= &quot;V4&quot;))%&gt;%
+  mutate(city = paste(V3.x, &quot;, &quot;,     V4.x, sep = &quot;&quot;))
+
+
+colnames(all_data0) &lt;- c(&quot;Airline_code&quot;, &quot;origin&quot;, &quot;destination&quot;, &quot;city1&quot;, &quot;country&quot;,  &quot;lat_ori&quot;, &quot;lng_ori&quot;, &quot;city_dest&quot;, &quot;country_dest&quot;, &quot;lat_dest&quot;, &quot;lng_dest&quot;, &quot;airline&quot;, &quot;city&quot;)
+
+all_data &lt;- na.omit(all_data0)
+
+all_data$city &lt;- dplyr::recode(all_data$city,
+                        &quot;Ã–stersund, Sweden&quot; = &quot;Oestersund, Sweden&quot;,
+                        &quot;Ã„ngelholm, Sweden&quot; = &quot;Aengelholm, Sweden&quot;,
+                        &quot;Ã‡orlu, Turkey&quot; = &quot;Corlu, Turkey&quot;)
+                        
+bootstrapPage(
+  tags$style(type = &quot;text/css&quot;, &quot;html, body {width:100%;height:100%}&quot;),
+  leafletOutput(&quot;map&quot;, width = &quot;100%&quot;, height = &quot;100%&quot;),
+  absolutePanel(top = 60, right = 10,
+                selectInput(&quot;origin&quot;,&quot;Origin&quot;,
+                            selected = &quot;Brisbane, Australia&quot;,
+                            levels(factor(all_data$city))),
+                # uiOutput(&quot;airline&quot;),
+                style = &quot;opacity: 0.65; z-index: 1000;&quot;)
+) 
+
+function(input,output, session){
+  
+  Dataframe2 &lt;- reactive({
+    data &lt;- all_data[all_data$city %in% input$origin,]})
+  
+  output$map &lt;- renderLeaflet({
+    data &lt;- Dataframe2()
+    
+    df2&lt;-gcIntermediate(as.matrix(data[,c(&quot;lng_ori&quot;, &quot;lat_ori&quot;)]),
+                        as.matrix(data[,c(&quot;lng_dest&quot;, &quot;lat_dest&quot;)]),
+                        n=100,
+                        addStartEnd=TRUE,
+                        sp=TRUE,
+                        breakAtDateLine=FALSE)
+    df2 &lt;- as(df2, &quot;SpatialLinesDataFrame&quot;)
+    df2.ff &lt;- fortify(df2)
+    
+    data$id &lt;-as.character(c(1:nrow(data))) 
+    gcircles &lt;- merge(df2.ff, data, all.x=T, by=&quot;id&quot;)
+    
+    if (data$lng_ori[1] &gt; 0){
+      center &lt;- data$lng_ori[1]
+    }
+    else{
+      center &lt;- data$lng_ori[1] + 360
+    }
+    
+    gcircles$long.recenter &lt;-  ifelse(gcircles$long  &lt; center - 180 , gcircles$long + 360, gcircles$long)
+    data$long.ori.recenter &lt;-  ifelse(data$lng_ori  &lt; center - 180 , data$lng_ori + 360, data$lng_ori)
+    data$long.dest.recenter &lt;-  ifelse(data$lng_dest  &lt; center - 180 , data$lng_dest + 360, data$lng_dest)
+    
+    test_line &lt;- sf::st_as_sf(gcircles, coords = c(&quot;long.recenter&quot;, &quot;lat&quot;)) %&gt;%
+      dplyr::group_by(id, piece) %&gt;%
+      dplyr::summarize(do_union=FALSE) %&gt;%
+      sf::st_cast(&quot;LINESTRING&quot;) %&gt;%
+      dplyr::ungroup()
+    
+    test_line2 &lt;- dplyr::left_join(test_line, data)
+    
+    labels &lt;- sprintf(
+      &quot;&lt;strong&gt;%s, &lt;/strong&gt; %s&quot;,
+      data$city_dest, data$country_dest) %&gt;% lapply(htmltools::HTML)
+  
+    m &lt;- leaflet(data =  test_line2) %&gt;%
+      addTiles() %&gt;%
+      addProviderTiles(providers$CartoDB.Positron, group = &quot;Carto DB Positron&quot;) %&gt;%
+      addProviderTiles(providers$CartoDB.DarkMatterNoLabels, group = &quot;Carto DB dark&quot;)%&gt;%
+      addPolylines(weight = 1, opacity = 0.5, color = &quot;#820a0a&quot;, label = ~airline) %&gt;%
+      addCircleMarkers(data = data, lng = ~long.ori.recenter, lat = ~lat_ori, radius =0.5, fillOpacity = 0.1,
+                       weight = 2,opacity = 0.1, color = &quot;red&quot;) %&gt;%
+      addCircleMarkers(data = data, lng = ~long.dest.recenter, lat = ~lat_dest, radius =1, label = labels) %&gt;%
+      addLayersControl(baseGroups = c(&quot;Carto DB Positron&quot;,&quot;Carto DB dark&quot;))
+    m
+  })
+}</code></pre>
 
     </div>
 
     
 
 
-<div class="article-tags">
-  
-  <a class="btn btn-primary btn-outline" href="/tags/mapping">mapping</a>
-  
-  <a class="btn btn-primary btn-outline" href="/tags/leaflet">leaflet</a>
-  
-  <a class="btn btn-primary btn-outline" href="/tags/shiny">shiny</a>
-  
-  <a class="btn btn-primary btn-outline" href="/tags/r">R</a>
-  
-</div>
-
 
 
 
     
-    
-    <div class="article-widget">
-      <div class="hr-light"></div>
-      <h3>Related</h3>
-      <ul>
-        
-        <li><a href="/post/origin-mapping/">Mapping country of origin with Leaflet and Shiny</a></li>
-        
-      </ul>
-    </div>
     
 
     
